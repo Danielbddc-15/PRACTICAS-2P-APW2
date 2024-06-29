@@ -1,0 +1,90 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Cliente {
+  id: ID!
+  nombre: String!
+  cedula: String!
+  estado: String!
+}
+
+type Concepto {
+  id: ID!
+  descripcion: String!
+  estado: String!
+}
+
+type Gasto {
+  id: ID!
+  clienteid: Cliente!
+  conceptoid: Concepto!
+  fecha: String!
+  hora: String!
+  valorGasto: Float!
+  estado: String!
+}
+
+type Query {
+  clientes: [Cliente!]!
+  cliente(id: Int!): Cliente!
+  Gastos: [Gasto!]!
+  Gasto(id: Float!): Gasto!
+  Conceptos: [Concepto!]!
+  Concepto(id: Float!): Concepto!
+}
+
+type Mutation {
+  createCliente(createClienteInput: CreateClienteInput!): Cliente!
+  updateCliente(updateClienteInput: UpdateClienteInput!): Cliente!
+  removeCliente(id: Int!): Cliente!
+  createGasto(createGastoInput: CreateGastoInput!): Gasto!
+  updateGasto(updateGastoInput: UpdateGastoInput!): Gasto!
+  removeGasto(id: Float!): Gasto!
+  createConcepto(createConceptoInput: CreateConceptoInput!): Concepto!
+  updateConcepto(updateConceptoInput: UpdateConceptoInput!): Concepto!
+  removeConcepto(id: Float!): Concepto!
+}
+
+input CreateClienteInput {
+  cedula: String!
+  nombre: String!
+  estado: String
+}
+
+input UpdateClienteInput {
+  cedula: String
+  nombre: String
+  estado: String
+  id: ID!
+}
+
+input CreateGastoInput {
+  clienteId: Float!
+  conceptoId: Float!
+  fecha: String!
+  hora: String!
+  valorGasto: Float!
+  estado: String!
+}
+
+input UpdateGastoInput {
+  clienteId: Float
+  conceptoId: Float
+  fecha: String
+  hora: String
+  valorGasto: Float
+  estado: String
+  id: ID!
+}
+
+input CreateConceptoInput {
+  descripcion: String!
+  estado: String!
+}
+
+input UpdateConceptoInput {
+  descripcion: String
+  estado: String
+  id: ID!
+}
