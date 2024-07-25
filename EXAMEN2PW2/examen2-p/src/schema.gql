@@ -1,0 +1,50 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type AreaSocial {
+  id: Int!
+  Codigo: String!
+  DetalleCondominio: String!
+  clase: String!
+  Responsable: String!
+  ValorH: Float!
+  FechaUU: String!
+  Empresa: String!
+  isDeleted: Boolean!
+}
+
+type Query {
+  findAllAreaSocial: [AreaSocial!]!
+  findAreaSocial(id: Int!): AreaSocial!
+}
+
+type Mutation {
+  createAreaSocial(createAreasocialInput: CreateAreasocialInput!): AreaSocial!
+  updateAreaSocial(updateAreasocialInput: UpdateAreasocialInput!): AreaSocial!
+  removeAreaSocial(id: Int!): AreaSocial!
+  removeLogicAreaSocial(id: Int!): AreaSocial!
+}
+
+input CreateAreasocialInput {
+  Codigo: String!
+  DetalleCondominio: String!
+  clase: String!
+  Responsable: String!
+  ValorH: Float!
+  FechaUU: String!
+  Empresa: String!
+  isDeleted: Boolean! = false
+}
+
+input UpdateAreasocialInput {
+  Codigo: String
+  DetalleCondominio: String
+  clase: String
+  Responsable: String
+  ValorH: Float
+  FechaUU: String
+  Empresa: String
+  isDeleted: Boolean = false
+  id: Int!
+}
