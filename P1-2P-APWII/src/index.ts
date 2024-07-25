@@ -4,7 +4,7 @@ import express, { Request, Response } from 'express';
 
 const prisma = new PrismaClient();
 const app = express();
-const PORT = 3005;
+const PORT = 3000;
 
 app.use(express.json());
 
@@ -212,7 +212,7 @@ const cors = require('cors');
 app.use(cors());
 
 app.use(cors({
-  origin: 'http://localhost:3000'
+  origin: 'http://localhost:8000'
 }));
 
 
@@ -226,7 +226,7 @@ const httpClient: HttpClient = new AxiosHttpClient();
 
 app.get('/data', async (req, res) => {
   try {
-    const url = 'http://localhost:3000/equipos'; // URL del servicio REST de tu compañero
+    const url = 'http://localhost:8000/api/v1/pelicula'; // URL del servicio REST de tu compañero
     const data = await httpClient.get<any[]>(url);
     res.json(data);
   } catch (error) {
